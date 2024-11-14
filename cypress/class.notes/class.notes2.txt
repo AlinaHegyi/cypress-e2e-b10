@@ -1,0 +1,147 @@
+  02.Cypress commands and locators
+
+
+
+
+
+   2 ways to locate elements : X-Path 
+                              CSS selectors
+
+
+     
+
+Cypress, by design, does not natively support XPath because its creators aimed 
+to encourage more maintainable and readable tests using CSS selectors, 
+which are typically faster and more reliable in web applications.
+If you still need to use XPath selectors, you can add support by installing a plugin.
+
+
+      Can locate using tags => input : radio-buttons, Checkboxes, Dropdowns, forms
+                            button
+                            li
+                            div
+                            <a> (anchor tag)
+                            <h1>
+
+
+
+      Can locate using symbols
+
+ 
+
+  # - locates by id
+  . - locates by class
+
+
+
+
+Child, descendant, adjacent sibling selectors
+
+  
+
+>       - child selector
+   /**
+     * Child Selector ( > ) *
+     * 
+     * Description: Targets direct children of a specified parent element.
+     */
+
+    cy.get('#checkbox-button-group > h3')
+
+    cy.get('#checkbox-button-group > div > #apple_check > #checkbox_1')
+
+    cy.get('#checkbox-button-group > div > .checkbox > #checkbox_1.mr-2')
+
+
+
+
+
+
+
+
+(Space) - descendant selector
+
+Descendant Selector (space):
+
+Description: Targets elements nested anywhere within a specific parent.
+
+Example: (div a) will select all <a> elements inside a <div>,
+
+
+
+
+
+Adjacent Sibling Selector (+):
+
+Description: Targets an element immediately after another specified element at the same level in the hierarchy.
+Example: (a + a) will target the second <a> if it directly follows the first one.
+
+
+
+
+Grouping Selector (comma, ,):
+Description: Combines multiple selectors into one rule set, allowing you to style different elements with the same set of styles.
+Example: (p, span) selects the both <p> and <span> web elements.
+
+
+
+
+
+
+*       -wildcard, matches any element
+
+*: Matches every element on the page.
+div > *: Matches all direct children of a <div>, regardless of what type of element they are.
+.class *: Matches all descendants of an element with the class "class", no matter how deeply nested they are.
+
+
+
+
+
+
+           ATRIBUTE SELECTORS
+
+
+[attribute]: Targets elements with a specific attribute, regardless of its value.
+                Ex: input[type] will select all <input> elements that have a type attribute, regardless of the value of it.
+
+
+
+[attribute=value]: Targets elements with a specific attribute and value.
+                Ex: input[type="text"] will select only <input> elements with a "type" attribute value of "text".
+
+
+[attribute^=value]: Matches elements with an attribute value that starts with a specific string.
+                Ex: a[href^="https://"] will select all links starting with "https://".
+
+
+[attribute$=value]: Matches elements with an attribute value that ends with a       specific string.
+                Ex: a[href$=".jpg"] will select all links that end with ".jpg".
+
+
+
+[attribute*=value]: Matches elements with an attribute value containing a specific substring.
+                Ex: a[href*="openai"] will select links containing the substring "openai" in the href,
+                                                                       such as "https://www.openai.com".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
