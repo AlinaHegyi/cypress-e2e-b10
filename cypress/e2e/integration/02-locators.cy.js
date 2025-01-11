@@ -1,20 +1,20 @@
 /// <reference types="cypress"/>
 
-describe("CSS Locators", () => {
-    it("Understanding CSS Syntax - Locating using tags", () => {
+describe('CSS Locators', () => {
+    it('Understanding CSS Syntax - Locating using tags', () => {
       cy.visit("https://www.techglobal-training.com/frontend/html-elements");
   
-      cy.get("button");
+      cy.get('button');
   
-      cy.get("h3");
+      cy.get('h3');
   
-      cy.get("li");
+      cy.get('li');
   
-      cy.get("input");
+      cy.get('input');
     });
   
-    it("Understanding CSS Syntax - Locating class and ID", () => {
-      cy.visit("https://www.techglobal-training.com/frontend/html-elements");
+    it('Understanding CSS Syntax - Locating class and ID', () => {
+      cy.visit('https://www.techglobal-training.com/frontend/html-elements');
   
   
       cy.get('#checkbox-button-group')
@@ -24,15 +24,15 @@ describe("CSS Locators", () => {
       // class="nadja_tugba youseff jibril kareem maria alina david timur bermet"
     });
   
-    it("Understanding CSS Syntax - Locating web elements using multiple selectors", () => {
-      cy.visit("https://www.techglobal-training.com/frontend/html-elements");
+    it('Understanding CSS Syntax - Locating web elements using multiple selectors', () => {
+      cy.visit('https://www.techglobal-training.com/frontend/html-elements');
   
       
       cy.get('label.checkbox.is-inline')
     });
   
-    it("Understanding CSS Syntax - Locating child, descendant, adjacent web element", () => {
-      cy.visit("https://www.techglobal-training.com/frontend/html-elements");
+    it('Understanding CSS Syntax - Locating child, descendant, adjacent web element', () => {
+      cy.visit('https://www.techglobal-training.com/frontend/html-elements');
   
       /**
        * Child Selector ( > ) *
@@ -149,7 +149,7 @@ describe("CSS Locators", () => {
 
 
   it('Pseudo Classes', () => {
-    cy.visit("https://www.techglobal-training.com/frontend/html-elements")
+    cy.visit('https://www.techglobal-training.com/frontend/html-elements')
     cy.get('#ordered_list > li:first-child')
     cy.get('#ordered_list > li:last-child')
     cy.get('#ordered_list > li:nth-child(2)')

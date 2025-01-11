@@ -2,7 +2,7 @@
 /// <reference types="cypress"/>
 describe("Keyboard & Mouse Actions", () => {
   beforeEach(() => {
-    //cy.visit("https://www.techglobal-training.com/frontend");
+    cy.visit("https://www.techglobal-training.com/frontend");
     cy.clickCard("Actions");
   });
   it("Mouse actions using Cypress events", () => {

@@ -12,15 +12,23 @@
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
+Cypress.Commands.add('validateResponse', (responseData, expectedData) => {
+
+  Object.entries(expectedData).forEach(([key, value]) => {
+    cy.log(`Key: ${key} Value: ${value}`)
+    expect(responseData.body[key]).to.eq(value)
+  })
+});
+
 
 Cypress.Commands.add('clickCard', (link) => {
 
-  cy.contains('.card, [class*="projectCard"]', link).click();
-})
+  cy.contains('.card, [class*="projectCard"]', link).click()
+});
 
 Cypress.Commands.add('selectDropdownOption', (locator, option) => {
   cy.get(locator).select(option)
-})
+});
 
 /**
  * Create a Cypress function that will name 'login'
@@ -44,27 +52,6 @@ Cypress.Commands.add('textValidator', (locator, text) => {
 
 // cy.textValidator('#main_heading', 'HTML Elements')
 
-// /**
-//  * Adds two numbers together.
-//  * 
-//  * @param {number} a - The first number.
-//  * @param {number} b - The second number
-//  * @returns {number} - The sum of the two numbers.
-//  * 
-//  * 
-//  * @example
-//  * // Returns 5
-//  * add(2, 3)
-//  * 
-//  *  * @example
-//  * // Returns 10
-//  * add(7, 3)
-//  */
-// export function add(a, b) {
-//   return a + b;
-// }
-
-// add('tech', 'global')
 
 //
 // -- This is a child command --

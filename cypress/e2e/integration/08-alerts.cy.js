@@ -2,7 +2,7 @@
 
 describe("Handling Alerts",{ tags: ['@smoke', '@regression'] }, () => {
     beforeEach(() => {
-      //cy.visit("https://www.techglobal-training.com/frontend");
+      cy.visit("https://www.techglobal-training.com/frontend");
       cy.clickCard("Alerts");
     });
   

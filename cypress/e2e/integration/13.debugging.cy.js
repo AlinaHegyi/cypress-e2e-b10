@@ -1,6 +1,7 @@
 /// <reference types="cypress"/>
 describe("Debugging", () => {
     beforeEach(() => {
+      cy.visit("https://www.techglobal-training.com/frontend");
       cy.clickCard("HTML Elements");
     });
 

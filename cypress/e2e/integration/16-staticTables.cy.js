@@ -4,6 +4,7 @@ describe("Static Tables", { tags: '@smoke' }, () => {
   const tablesPage = new TablesPage();
 
   beforeEach(() => {
+    cy.visit("https://www.techglobal-training.com/frontend");
     cy.clickCard("Tables");
     cy.fixture("example").then(function (data) {
       this.headers = data.headers;

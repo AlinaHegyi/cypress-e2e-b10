@@ -6,6 +6,7 @@ const loginPage = new LoginPage();
 describe("Login Page Test",{ tags: '@regression' }, () => {
 
   beforeEach(() => {
+    cy.visit("https://www.techglobal-training.com/frontend");
     cy.clickCard("Login Function");
     cy.fixture('example').then(function(data) {
       this.username = data.username
